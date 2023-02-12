@@ -3,7 +3,7 @@ Dim fs
 Set fs = CreateObject("Scripting.FileSystemObject")
 strOutFileName = InputBox("Enter File Name here (with extension like outfile.doc):")
 scriptdir = CreateObject("Scripting.FileSystemObject").GetParentFolderName(WScript.ScriptFullName)
-WScript.Echo scriptdir
+WScript.Echo "Path at which utility is present " & scriptdir & " Your Replacement will take place now, Please click OK to proceed and wait till success message!!"
 CreateOutputfile
 Dim Inputvalu
 Set Inputvalu = fs.OpenTextFile(scriptdir & "\Inputs.csv")
@@ -18,7 +18,7 @@ Do While Not Inputvalu.AtEndOfStream
         GENERIC_TEXT_REPLACE INPUT_ARRAY(0), INPUT_ARRAY(1)
     end if
 loop
-WScript.Echo "Hey Chena!! your file is Ready with Replacements @" & scriptdir & "\" & strOutFileName
+WScript.Echo "Hey Maurya!! your file is Ready with Replacements at: " & scriptdir & "\" & strOutFileName & " You can now open your File."
 Inputvalu.close
 Set Inputvalu = Nothing
 Set fs = Nothing
